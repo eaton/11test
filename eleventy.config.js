@@ -7,7 +7,7 @@ export default async function(eleventyConfig) {
     { "title": "page 3", "id": "page-3", "content": "this is the third data page." }
   ]);
 
-  // Build a collection containing templates with an 'id' data property
+  // Build a dummy collection
   eleventyConfig.addCollection("test", () => []);
   
   // Define computed functions
@@ -16,7 +16,9 @@ export default async function(eleventyConfig) {
 
 const computedPermalink = function() {
   return( data ) => {
-    //console.log(`Test collection contains ${data.collections.test?.length} items`);
-    return `/${data.document.id}/`;
+    // Access the dummy collection
+    if (Object.values(data.collections)) {
+      return `/${data.document.id}/`;
+    }
   }
 }
