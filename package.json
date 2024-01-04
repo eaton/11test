@@ -1,0 +1,20 @@
+{
+  "name": "11test",
+  "version": "1.0.0",
+  "description": "11ty Testing",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "del-cli _site;npx @11ty/eleventy",
+    "start": "npx @11ty/eleventy --serve --quiet",
+    "debug": "del-cli _site;DEBUG=Eleventy* npx @11ty/eleventy",
+    "debugstart": "DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
+    "clean": "del-cli _site"
+  },
+  "author": "jeff@eaton.fyi",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "3.0.0-alpha.3",
+    "del-cli": "^3.0.1"
+  }
+}
